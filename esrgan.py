@@ -7,10 +7,10 @@ class ESRGAN:
     def __init__(self, use_x2=False):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         if use_x2:
-            model_path = 'realesrgan/weights/RealESRGAN_x2plus.pth'
+            model_path = 'RealESRGAN_x2plus.pth' #https://huggingface.co/dtarnow/UPscaler/blob/main/RealESRGAN_x2plus.pth
             scale = 2
         else:
-            model_path = 'realesrgan/weights/RealESRGAN_x4plus.pth'
+            model_path = 'RealESRGAN_x4plus.pth' #https://huggingface.co/lllyasviel/Annotators/blob/main/RealESRGAN_x4plus.pth
             scale = 4
         self.scale = scale
         model = RRDBNet(
